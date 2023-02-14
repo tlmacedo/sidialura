@@ -1,17 +1,23 @@
+import random
+
+
 def jogar():
     print("*********************************")
     print("***Bem vindo ao jogo de Forca!***")
     print("*********************************")
 
-    palavra_secreta = "banana".lower()
-    palavra_forca = []
+    arquivo = open('palavras.txt', 'r')
+    palavras = []
+    for linha in arquivo:
+        palavras.append(linha.strip())
+    arquivo.close()
+    palavra_secreta = palavras[random.randrange(0, len(palavras))]
+    palavra_forca = ['_' for i in palavra_secreta]
     chutes = []
     enforcou = False
     acertou = False
     repetiu_letra = False
 
-    for i in range(len(palavra_secreta)):
-        palavra_forca += "_"
     print('a palavra secreta é ? {} com {} letras'.format(''.join(palavra_forca), len(palavra_forca)))
 
     while not enforcou and not acertou:
