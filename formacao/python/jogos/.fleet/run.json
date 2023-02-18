@@ -3,8 +3,9 @@
         {
             "type": "python",
             "name": "jogos",
-            "arguments": ["jogos.py"],
-        },
-
+            "arguments": [
+                "jogos.py"
+            ]
+        }
     ]
 }
