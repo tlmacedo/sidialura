@@ -3,9 +3,18 @@
 		{
 			"type": "python",
 			"name": "jogos",
-			"arguments": ["jogos.py"],
-			"workingDir": "formacao/python/jogos/",
+			"arguments": [
+				"jogos.py"
+			],
+			"workingDir": "formacao/python/jogos/"
 		},
-		
+		{
+			"type": "python",
+			"name": "playlist_tv",
+			"arguments": [
+				"main.py"
+			],
+			"workingDir": "formacao/python/playlist_tv/"
+		}
 	]
 }
