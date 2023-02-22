@@ -1,7 +1,7 @@
 class Filme:
 	def __init__(self, nome, ano, duracao):
 		print('criando {}...'.format(self.__class__.__name__))
-		self.nome = nome
+		self.__nome = nome
 		self.__ano = ano
 		self.__duracao = duracao
 		self.__likes = 0
