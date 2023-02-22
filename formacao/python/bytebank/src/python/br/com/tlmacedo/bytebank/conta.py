@@ -5,7 +5,7 @@ class Conta:
 		self.__numero = numero
 		self.__titular = titular
 		self.__saldo = saldo
-		self.___limite = limite
+		self.__limite = limite
 
 	@property
 	def numero(self):
@@ -31,7 +31,10 @@ class Conta:
 		self.__saldo += valor
 
 	def sacar(self, valor):
-		self.__saldo -= valor
+		if self.__pode_sacar(valor):
+			self.__saldo -= valor
+		else:
+			print("O valor {} passou o limite".format(valor))
 
 	def extrato(self):
 		print('Saldo de {} do titular: {}'.format(self.__saldo, self.__titular))
@@ -39,3 +42,7 @@ class Conta:
 	def transferir(self, valor, conta_destino):
 		self.sacar(valor)
 		conta_destino.depositar(valor)
+
+	def __pode_sacar(self, valor_a_sacar):
+		saldo_disponivel = self.__saldo + self.__limite
+		return valor_a_sacar <= saldo_disponivel
