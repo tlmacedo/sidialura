@@ -1,0 +1,11 @@
+{
+	"configurations": [
+		{
+			"type": "python",
+			"name": "jogos",
+			"arguments": ["jogos.py"],
+			"workingDir": "formacao/python/jogos/",
+		},
+		
+	]
+}
