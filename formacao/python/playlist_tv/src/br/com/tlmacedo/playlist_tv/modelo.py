@@ -1,58 +1,45 @@
-class Filme:
-	def __init__(self, nome, ano, duracao):
-		print('criando {}...'.format(self.__class__.__name__))
-		self.__nome = nome
-		self.__ano = ano
-		self.__duracao = duracao
-		self.__likes = 0
+class Programa:
+	def __init__(self, nome, ano):
+		print('criando programa {}...'.format(self.__class__.__name__))
+		self._nome = nome
+		self._ano = ano
+		self._likes = 0
 
 	@property
 	def nome(self):
-		return self.__nome
+		return self._nome
 
 	@nome.setter
 	def nome(self, nome):
-		self.__nome = nome.title()
+		self._nome = nome.title()
 
 	@property
 	def ano(self):
-		return self.__ano
+		return self._ano
+
+	@property
+	def likes(self):
+		return self._likes
+
+	def dar_like(self):
+		self._likes += 1
+
+
+class Filme(Programa):
+	def __init__(self, nome, ano, duracao):
+		super().__init__(nome, ano)
+		self._duracao = duracao
 
 	@property
 	def duracao(self):
-		return self.__duracao
-
-	@property
-	def likes(self):
-		return self.__likes
-
-	def dar_like(self):
-		self.__likes += 1
+		return self._duracao
 
 
-class Serie:
+class Serie(Programa):
 	def __init__(self, nome, ano, temporadas):
-		print('criando {}...'.format(self.__class__.__name__))
-		self.__nome = nome.title()
-		self.__ano = ano
-		self.__temporadas = temporadas
-		self.__likes = 0
-
-	@property
-	def nome(self):
-		return self.__nome
-
-	@property
-	def ano(self):
-		return self.__ano
+		super().__init__(nome, ano)
+		self._temporadas = temporadas
 
 	@property
 	def temporadas(self):
-		return self.__temporadas
-
-	@property
-	def likes(self):
-		return self.__likes
-
-	def dar_likes(self):
-		self.__likes += 1
+		return self._temporadas
