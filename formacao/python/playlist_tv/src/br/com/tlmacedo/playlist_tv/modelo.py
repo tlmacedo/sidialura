@@ -1,6 +1,5 @@
 class Programa:
 	def __init__(self, nome, ano):
-		print('criando programa {}...'.format(self.__class__.__name__))
 		self._nome = nome
 		self._ano = ano
 		self._likes = 0
